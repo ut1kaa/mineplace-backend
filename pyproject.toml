@@ -1,0 +1,36 @@
+[tool.poetry]
+name = "src"
+version = "0.1.0"
+description = ""
+authors = ["ut1ka <utika.nice@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+alembic = "^1.13.2"
+uvicorn = {extras = ["standard"], version = "^0.31.0"}
+# pydantic-settings = "^2.5.2"
+sqlalchemy = {extras = ["postgresql-asyncpg"], version = "^2.0.35"}
+# fastapi = "^0.99.1"
+werkzeug = "^3.0.4"
+passlib = "^1.7.4"
+# fastapi-jwt-auth = "^0.5.0"
+# pydantic="1.10.11"
+fastapi-jwt-auth = {git = "https://github.com/vvpreo/fastapi-jwt-auth"}
+fastapi = "^0.115.0"
+pydantic-settings = "^2.5.2"
+pydantic = {extras = ["email"], version = "^2.9.2"}
+python-multipart = "^0.0.12"
+asyncpg = "^0.29.0"
+bcrypt = "^4.2.0"
+aiosqlite = "^0.20.0"
+slowapi = "^0.1.9"
+aiofiles = "^24.1.0"
+
+[tool.poetry.scripts]
+start_api  = "src.run:main"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

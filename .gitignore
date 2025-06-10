@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python/
+
+# Distribution and packaging
+.eggs/
+*.egg-info/
+dist/
+build/
+.venv/
+
+# Editors
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS
+.DS_Store
+.Trash/
+Thumbs.db
+
+# Poetry
+.poetry/
+.pdm-build/
+
+# Virtual environment (usually handled by poetry.lock, but good to be explicit)
+venv/
+.venv/
+
+# Specific to your project, might be useful to add:
+# logs/
+# *.log
+# .env
+# instance/
+# media/
+# staticfiles/
