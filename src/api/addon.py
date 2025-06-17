@@ -14,6 +14,7 @@ from src.middlewares.auth import authenticate
 from src.models.addon import AddOn, AddOnType
 from sqlalchemy.orm import selectinload
 from src.database import get_session
+from src.models.user import User
 from src.models.user_likes import UserLike
 
 # from slowapi import Limiter
@@ -292,9 +293,13 @@ async def create_addon(
     await session.commit()
     await session.refresh(new_addon)
 
+    user_result = await session.execute(select(User).filter(User.uuid == current_user_uuid))
+    user = user_result.scalars().first()
+
     return AddOnResponse.model_validate({
         "uuid": new_addon.uuid,
         "user_uuid": new_addon.user_uuid,
+        "username": user.username,
         "name": new_addon.name,
         "type": new_addon.type,
         "short_description": new_addon.short_description,

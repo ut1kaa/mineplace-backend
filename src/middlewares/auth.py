@@ -43,6 +43,7 @@ async def authenticate(Authorize: AuthJWT = Depends()):
     """
     try:
         Authorize.jwt_required()
+
     except Exception as e:
         logger.warning(f"Authentication failed: {str(e)}")
         raise HTTPException(
